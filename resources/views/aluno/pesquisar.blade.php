@@ -9,6 +9,7 @@
     <link href="../../css/app.css" rel="stylesheet">
 </head>
 <body>
+@include('aluno.cabecalho')
 <div class="container">
     <h1 class="mt-2">Pesquisa de Aluno</h1>
     @if(!empty($mensagem))

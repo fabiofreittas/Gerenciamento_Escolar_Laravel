@@ -15,16 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/alunos/pesquisar', 'AlunoController@pesquisar');
+Route::get('/alunos/pesquisar', 'AlunoController@pesquisar')->middleware('auth');
 
-Route::post('/alunos/pesquisar', 'AlunoController@pesquisar');
+Route::post('/alunos/pesquisar', 'AlunoController@pesquisar')->middleware('auth');
 
-Route::get('/alunos/inserir', 'AlunoController@mostrar_inserir');
+Route::get('/alunos/inserir', 'AlunoController@mostrar_inserir')->middleware('auth');
 
-Route::post('/alunos/inserir', 'AlunoController@inserir');
+Route::post('/alunos/inserir', 'AlunoController@inserir')->middleware('auth');
 
-Route::get('/alunos/alterar/{id}', 'AlunoController@mostrar_alterar');
+Route::get('/alunos/alterar/{id}', 'AlunoController@mostrar_alterar')->middleware('auth');
 
-Route::post('/alunos/alterar', 'AlunoController@alterar');
+Route::post('/alunos/alterar', 'AlunoController@alterar')->middleware('auth');
 
-Route::get('/alunos/excluir/{id}', 'AlunoController@excluir');
+Route::get('/alunos/excluir/{id}', 'AlunoController@excluir')->middleware('auth');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

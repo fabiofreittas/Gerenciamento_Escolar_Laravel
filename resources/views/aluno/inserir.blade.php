@@ -9,10 +9,11 @@
     <title>Inserir Alunos</title>
 </head>
 <body>
+@include('aluno.cabecalho')
 <div class="container">
     <h1 class="mt-2">Inserir Aluno</h1>
     @if(!empty($mensagem))
-        <div class="alert alert-success">Produto inserido com sucesso!</div>
+        <div class="alert alert-success">Cadastro inserido com sucesso!</div>
     @endif
     <form action="/alunos/inserir" method="post" class="mt-2">
         <input type="hidden" name="_token" value="{{{ csrf_token() }}}">

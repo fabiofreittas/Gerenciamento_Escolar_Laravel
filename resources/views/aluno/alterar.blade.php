@@ -1,4 +1,6 @@
 <!doctype html>
+
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +11,9 @@
     <title>Alteração de Cadastro</title>
 </head>
 <body>
+<?php
+@include('aluno.cabecalho')
+?>
 <div class="container">
     <h1 class="mt-2">Alterar Cadastro de Alunos</h1>
     <form action="/alunos/alterar" method="post" class="mt-2">
